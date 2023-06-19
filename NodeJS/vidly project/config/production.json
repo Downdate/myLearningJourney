@@ -1,0 +1,6 @@
+{
+  "name":"prod_name",
+  "mail": {
+    "host": "prod_host"
+  }
+}

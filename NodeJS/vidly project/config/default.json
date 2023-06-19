@@ -1,0 +1,6 @@
+{
+  "name":"default_name",
+  "mail": {
+    "host": "default_host"
+  }
+}

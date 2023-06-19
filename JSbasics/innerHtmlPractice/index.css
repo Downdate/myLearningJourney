@@ -1,0 +1,18 @@
+body{
+    text-align: center;
+    font-style: italic;
+    font-family: Arial;
+    position: center;
+    padding: 50px;
+}
+
+div{
+    position: center;
+}
+
+button{
+    position: center;
+    background-color: red;
+    border-radius: 10px;
+    padding: 10px;
+}
