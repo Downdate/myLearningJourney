@@ -1,15 +1,9 @@
 console.log('before')
 //get the user
 getuser(1)
-    .then(user => {
-        getRepositories(user.githubUsername)
-            .then(repos => {
-                getCommits(repos[0])
-                    .then(commits => {
-                        console.log('commits: ',commits)
-                    })
-            })
-    })
+    .then(user => getRepositories(user.githubUsername))
+    .then(repos => getCommits(repos[0]))
+    .then(commits => console.log('commits: ',commits))
 
 console.log('after')
 
