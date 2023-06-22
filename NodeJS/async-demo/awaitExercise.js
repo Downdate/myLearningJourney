@@ -1,10 +1,15 @@
+//making our async function
 async function advertisementEmail(id) {
     try {
-        const customer = await getCustomer(1)
-        console.log(customer)
+        const customer = await getCustomer(id)
+        console.log('Customer: ',customer)
         if (customer.isGold){
             const movies = await getTopMovies()
+            console.log(`Movies: `,movies)
             sendEmail(customer.email,movies)
+        }
+        else{
+            console.log(`customer is not gold`)
         }
     }
     catch (err) {
@@ -12,7 +17,9 @@ async function advertisementEmail(id) {
     }
 
 }
-advertisementEmail()
+//testing it
+advertisementEmail(1)
+
 function getCustomer(id){
     return new Promise((resolve, reject)=>{
         setTimeout(
@@ -27,13 +34,18 @@ function getCustomer(id){
 }
 function getTopMovies(){
     return new Promise((resolve, reject)=>{
-        resolve(['movie1','movie2','movie3'])
+        setTimeout(()=>{
+            resolve(['movie1','movie2','movie3'])
+        },2000)
     })
 }
 
 function sendEmail(email,movies) {
     return new Promise((resolve, reject)=>{
-        console.log(`email containing ${movies} sent to ${email}`)
-        resolve()
+        setTimeout(()=>{
+            console.log(`email containing ${movies} sent to ${email}`)
+            resolve()
+        },2000)
+
         })
 }
