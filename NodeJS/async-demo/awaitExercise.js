@@ -27,7 +27,7 @@ function getCustomer(id){
                 id: id,
                 name:'Daniel',
                 isGold: true,
-                email:'email'
+                email:'email@mail.com'
             })
         ,2000)
     })
