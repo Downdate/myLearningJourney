@@ -21,7 +21,7 @@ const courseSchema = new mongoose.Schema({
         type: Array,
         validate:{
             validator: function (v) {
-                return v.length > 0
+                return v && v.length > 0
             },
             message:'the course should have at least 1 tag'
         }
@@ -124,7 +124,7 @@ async function removeCourse(id){
 }
 
 //getCourses()
-//createCourse()
+createCourse()
 //updateCourseRet('64c63f92f998ce3420c762f6')
 //updateCourse('64c63f92f998ce3420c762f6')
 //removeCourse('64c63f92f998ce3420c762f6')
