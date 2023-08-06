@@ -5,7 +5,11 @@ const debug   = require('debug')('app:')
 const Morgan  = require('morgan')
 const config  = require('config')
 const genres  = require('./routes/genres')
+const mongoose = require("mongoose")
 
+mongoose.connect("mongodb://localhost/vidly")
+    .then(()=> console.log("connected to mongodb..."))
+    .catch((err)=> console.log("couldn't connect to mongodb",err.message))
 
 app.use(express.json())
 app.use('/api/genres', genres)
